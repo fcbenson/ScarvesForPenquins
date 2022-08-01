@@ -1,0 +1,46 @@
+/**
+ * utilities/media.less
+ * --------------------
+ * Media queries variables for the site
+ */
+
+@mobile-max-width: ~'(max-width: 713px)';
+
+@tablet-min-width: ~'(min-width: 714px)';
+@tablet-max-width: ~'(max-width: 1200px)';
+
+@desktop-min-width: ~'(min-width: 1201px)';
+
+@mobile-only: ~'screen and @{mobile-max-width}';
+@tablet-only: ~'screen and @{tablet-min-width} and @{tablet-max-width}';
+@desktop-only: ~'screen and @{desktop-min-width}';
+
+@not-mobile: ~'screen and @{tablet-min-width}';
+
+@media @mobile-only {
+	.hide-mobile {
+		display: none !important;
+	}
+	body:after {
+		content: 'mobile';
+		display: none
+	}
+}
+@media @tablet-only {
+	.hide-tablet {
+		display: none !important;
+	}
+	body:after {
+		content: 'tablet';
+		display: none
+	}
+}
+@media @desktop-only {
+	.hide-desktop {
+		display: none !important;
+	}
+	body:after {
+		content: 'desktop';
+		display: none
+	}
+}
